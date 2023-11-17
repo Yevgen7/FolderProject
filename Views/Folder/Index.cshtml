@@ -1,0 +1,14 @@
+﻿@model FolderProject.Models.IndexViewModel
+
+<h2>@Model.ParentName</h2>
+@if (Model.folders.Count() > 0)
+{
+    @foreach (var folder in Model.folders)
+    {
+        <h3><a asp-action="Index" asp-route-id="@folder.FolderId">@folder.Name</a></h3>
+    }
+}
+else
+{
+    <h3>No folders</h3>
+}
